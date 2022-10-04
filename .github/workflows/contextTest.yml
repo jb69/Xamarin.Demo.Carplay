@@ -21,6 +21,6 @@ jobs:
       - name: Dump committer
         run: echo '${{ github.event.head_commit.committer.email }}'
       - name: Dump pusher
-        run: echo '${{ github.event.pusher }}'
+        run: echo '${{ github.event.pusher.email }}'
       - name: Dump pusher = committer
-        run: echo '${{ github.event.pusher == github.event.head_commit.committer.email }}'
+        run: echo '${{ github.event.pusher.email == github.event.head_commit.committer.email }}'
