@@ -18,5 +18,9 @@ jobs:
         run: echo '${{ toJSON(strategy) }}'
       - name: Dump matrix context
         run: echo '${{ toJSON(matrix) }}'
-      - name: Dump specifics
+      - name: Dump committer
         run: echo '${{ github.event.head_commit.committer.email }}'
+      - name: Dump pusher
+        run: echo '${{ github.event.pusher }}'
+      - name: Dump pusher = committer
+        run: echo '${{ github.event.pusher == github.event.head_commit.committer.email }}'
